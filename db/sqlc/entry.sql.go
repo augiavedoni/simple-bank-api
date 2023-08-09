@@ -19,8 +19,8 @@ INSERT INTO entries (
 `
 
 type CreateEntryParams struct {
-	AccountID int64  `json:"account_id"`
-	Amount    string `json:"amount"`
+	AccountID int64 `json:"account_id"`
+	Amount    int64 `json:"amount"`
 }
 
 func (q *Queries) CreateEntry(ctx context.Context, arg CreateEntryParams) (Entry, error) {
@@ -110,8 +110,8 @@ RETURNING id, account_id, amount, created_at
 `
 
 type UpdateEntryParams struct {
-	ID     int64  `json:"id"`
-	Amount string `json:"amount"`
+	ID     int64 `json:"id"`
+	Amount int64 `json:"amount"`
 }
 
 func (q *Queries) UpdateEntry(ctx context.Context, arg UpdateEntryParams) (Entry, error) {
